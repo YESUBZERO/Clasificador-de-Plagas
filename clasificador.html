@@ -200,16 +200,16 @@
         var porcentaje1 = resultados[0];
         var porcentaje2 = resultados[1];
 
-        var clases = ['Anisocelis flavolineata','Dione Juno','Operador', 'Phthiacnemia picta'];
+        var clases = ['Anisocelis flavolineata','Dione Juno','Indefinido', 'Phthiacnemia picta'];
         console.log("Prediccion", clases[mayorIndice]);
 
         if(Math.max.apply(Math, resultados) >= 0.7) {
                   console.log("Prediccion", clases[mayorIndice]); //notas para el migue: esta linea imprime la prediccion en la consola.
-                  document.getElementById("porcentaje").innerHTML = resultados; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
+                  document.getElementById("porcentaje").innerHTML = (resultados * 100) + "%"; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
                   document.getElementById("resultado").innerHTML = clases[mayorIndice];//nota para el migue: esta linea imprime la prediccion en texto en el <div id:"resultado"></div> 
           
               } else {
-                  document.getElementById("porcentaje").innerHTML = resultados; 
+                  document.getElementById("porcentaje").innerHTML = (resultados * 100) + "%"; 
                   document.getElementById("resultado").innerHTML = 'Desconocido';
               }
                 
