@@ -74,7 +74,7 @@
         <div class="text-center"><button class="btn btn-primary mb-2" id="cambiar-camara"
             onclick="cambiarCamara();">Cambiar camara</button></div>
         <div style="font-family: Abel; font-size: 10;" id="resultado"></div>
-        <div class="text-center" style="font-family: Abel; font-size: 10;" id="salida"></div>
+        <div class="text-center" style="font-family: Abel; font-size: 10;" id="porcentaje"></div>
       </div>
     </div>
 
@@ -203,20 +203,19 @@
         var clases = ['Anisocelis flavolineata','Undefined', 'Phthiacnemia picta'];
         console.log("Prediccion", clases[mayorIndice]);
 
-        if (mayorIndice == 0) {
-          document.getElementById("salida").innerHTML = (resultados[0] * 100) + "%";
-        }
-        if (mayorIndice == 1) {
-          document.getElementById("salida").innerHTML = (resultados[1] * 100) + "%";
-        }
-        if (mayorIndice == 2) {
-          document.getElementById("salida").innerHTML = (resultados[2] * 100) + "%";
-        }
-        document.getElementById("resultado").innerHTML = clases[mayorIndice];
+        if(Math.max.apply(Math, resultados) >= 0.7) {
+                  console.log("Prediccion", clases[mayorIndice]); //notas para el migue: esta linea imprime la prediccion en la consola.
+                  document.getElementById("porcentaje").innerHTML = resultados; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
+                  document.getElementById("resultado").innerHTML = clases[mayorIndice];//nota para el migue: esta linea imprime la prediccion en texto en el <div id:"resultado"></div> 
+          
+              } else {
+                  document.getElementById("porcentaje").innerHTML = resultados; 
+                  document.getElementById("resultado").innerHTML = 'Desconocido';
+              }
                 
       }
 
-      setTimeout(predecir, 50);
+      setTimeout(predecir, 150);
     }
 
     function procesarCamara() {
