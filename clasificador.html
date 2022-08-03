@@ -205,11 +205,11 @@
 
         if(Math.max.apply(Math, resultados) >= 0.7) {
                   console.log("Prediccion", clases[mayorIndice]); //notas para el migue: esta linea imprime la prediccion en la consola.
-                  document.getElementById("porcentaje").innerHTML = ((Math.round(resultados * 100) / 100)) + "%"; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
+                  document.getElementById("porcentaje").innerHTML = resultados; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
                   document.getElementById("resultado").innerHTML = clases[mayorIndice];//nota para el migue: esta linea imprime la prediccion en texto en el <div id:"resultado"></div> 
           
               } else {
-                  document.getElementById("porcentaje").innerHTML = ((Math.round(resultados * 100) / 100)) + "%"; 
+                  document.getElementById("porcentaje").innerHTML = resultados; 
                   document.getElementById("resultado").innerHTML = 'Desconocido';
               }
                 
