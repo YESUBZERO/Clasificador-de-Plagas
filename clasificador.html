@@ -205,6 +205,7 @@
 
         if(Math.max.apply(Math, resultados) >= 0.7) {
                   console.log("Prediccion", clases[mayorIndice]); //notas para el migue: esta linea imprime la prediccion en la consola.
+                  console.log("Indice: ", mayorIndice)
                   document.getElementById("porcentaje").innerHTML = resultados; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
                   document.getElementById("resultado").innerHTML = clases[mayorIndice];//nota para el migue: esta linea imprime la prediccion en texto en el <div id:"resultado"></div> 
           
