@@ -205,19 +205,11 @@
 
         if(Math.max.apply(Math, resultados) >= 0.7) {
                   console.log("Prediccion", clases[mayorIndice]); //notas para el migue: esta linea imprime la prediccion en la consola.
-<<<<<<< HEAD
-                  document.getElementById("porcentaje").innerHTML = resultados[mayorIndice]; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
-                  document.getElementById("resultado").innerHTML = clases[mayorIndice];//nota para el migue: esta linea imprime la prediccion en texto en el <div id:"resultado"></div> 
-          
-              } else {
-                  document.getElementById("porcentaje").innerHTML = resultados[2]; 
-=======
                   document.getElementById("porcentaje").innerHTML = resultados; //nota para el migue: esta linea imprime el % en el <div id:"porcentaje"></div> 
                   document.getElementById("resultado").innerHTML = clases[mayorIndice];//nota para el migue: esta linea imprime la prediccion en texto en el <div id:"resultado"></div> 
           
               } else {
-                  document.getElementById("porcentaje").innerHTML = resultados; 
->>>>>>> aae7badf6dbed6f0302fa33fcd6a4d6093f2224c
+                  document.getElementById("porcentaje").innerHTML = resultados[2]; 
                   document.getElementById("resultado").innerHTML = 'Desconocido';
               }
                 
@@ -235,15 +227,6 @@
       setTimeout(procesarCamara, 20);
     }
 
-    /**
-     * Hermite resize - fast image resize/resample using Hermite filter. 1 cpu version!
-     * 
-     * @param {HtmlElement} canvas
-     * @param {int} width
-     * @param {int} height
-     * @param {boolean} resize_canvas if true, canvas will be resized. Optional.
-     * Cambiado por RT, resize canvas ahora es donde se pone el chiqitillllllo
-     */
     function resample_single(canvas, width, height, resize_canvas) {
       var width_source = canvas.width;
       var height_source = canvas.height;
